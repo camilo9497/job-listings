@@ -1,0 +1,14 @@
+:root {
+  /* primary */
+  --DarkCyan: hsl(180, 29%, 50%);
+
+  /* neutral */
+  --BackgroundBody: hsl(180, 52%, 96%);
+  --BackgroundFilterTablets: hsl(180, 31%, 95%);
+  --DarkGrayishCyan: hsl(180, 8%, 52%);
+  --VeryDarkGrayishCyan: hsl(180, 14%, 20%);
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+}
