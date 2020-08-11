@@ -34,7 +34,7 @@ article:hover {
 }
 .tag p {
   color: white;
-  font-size: 12px;
+  font-size: 0.7em;
   font-weight: 700;
 }
 .tag:nth-child(1) {
@@ -44,11 +44,13 @@ article:hover {
   margin-right: 15px;
   color: var(--DarkCyan);
   font-weight: 700;
+  font-size: 1em;
 }
 .position {
   color: var(--VeryDarkGrayishCyan);
   font-weight: 700;
   margin-bottom: 10px;
+  font-size: 1.3em;
 }
 .position:hover {
   color: var(--DarkCyan);
@@ -59,7 +61,6 @@ article:hover {
 }
 .container-time-location {
   display: flex;
-  width: 320px;
 }
 .container-time {
   display: flex;
@@ -69,6 +70,7 @@ article:hover {
 }
 .container-time p {
   width: 100%;
+  font-size: 0.95em;
 }
 .container-time::after {
   content: "";
@@ -88,7 +90,7 @@ article:hover {
 .container-tags-filter {
   width: 50%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
 }
 .tags-filter {
@@ -96,6 +98,7 @@ article:hover {
   padding: 10px 8px;
   border-radius: 5px;
   color: var(--DarkCyan);
+  margin-left: 15px;
 }
 .tags-filter:hover {
   background: var(--DarkCyan);
@@ -104,4 +107,8 @@ article:hover {
 }
 .tags-filter p {
   font-weight: 700;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 1100px) {
 }

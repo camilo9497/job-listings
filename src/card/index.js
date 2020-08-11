@@ -1,56 +1,72 @@
 import React from "react";
 import "./style.css";
-import image from "../assets/eyecam-co.svg";
 
-function Card() {
+function Card(props) {
+  let languages = [];
+  let tools = [];
+  if (props.languages) {
+    languages = props.languages;
+  }
+  if (props.tools) {
+    tools = props.tools;
+  }
+  languages = [...languages, ...tools];
+
   return (
     <article>
       <div className="container-information">
         <div className="container-image">
-          <img src={image} alt="" />
+          <img src={props.logo} alt="" />
         </div>
         <div className="container-information-detail">
           <div className="container-company-tags">
-            <h3 className="company">Photosnap</h3>
+            <h3 className="company">{props.company}</h3>
             <div className="container-tags">
-              <div className="tag">
-                <p>New!</p>
-              </div>
-              <div className="tag">
-                <p>Featured</p>
-              </div>
+              {props.new === true ? (
+                <div className="tag">
+                  <p>New!</p>
+                </div>
+              ) : null}
+              {props.featured === true ? (
+                <div className="tag">
+                  <p>Featured</p>
+                </div>
+              ) : null}
             </div>
           </div>
-          <h2 className="position">Senior Frontend Developer</h2>
+          <h2 className="position">{props.position}</h2>
           <div className="container-time-location">
             <div className="container-time">
-              <p>1d ago</p>
+              <p>{props.postedAt}</p>
             </div>
             <div className="container-time">
-              <p>Full Time</p>
+              <p>{props.contract}</p>
             </div>
             <div className="container-time">
-              <p>USA only</p>
+              <p>{props.location}</p>
             </div>
           </div>
         </div>
       </div>
       <div className="container-tags-filter">
-        <div className="tags-filter">
-          <p>Frontend</p>
-        </div>
-        <div className="tags-filter">
-          <p>Frontend</p>
-        </div>
-        <div className="tags-filter">
-          <p>Frontend</p>
-        </div>
-        <div className="tags-filter">
-          <p>Frontend</p>
-        </div>
-        <div className="tags-filter">
-          <p>Frontend</p>
-        </div>
+        {props.role && (
+          <div className="tags-filter">
+            <p>{props.role}</p>
+          </div>
+        )}
+        {props.level && (
+          <div className="tags-filter">
+            <p>{props.level}</p>
+          </div>
+        )}
+        {languages &&
+          languages.map((language) => {
+            return (
+              <div className="tags-filter">
+                <p>{language}</p>
+              </div>
+            );
+          })}
       </div>
     </article>
   );
